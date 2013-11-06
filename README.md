@@ -27,10 +27,12 @@ Currently the language supports the following features:
 
 - The factorial function can be written as:
 
+```
     (defun factorial:int [n:int]
       (if (le n 1)
         1
         (* n (factorial (- n 1)))))
+```
 
 - Here is a longer example, showing some of the language features:
 ```
