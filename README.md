@@ -36,29 +36,29 @@ Currently the language supports the following features:
 
 - Here is a longer example, showing some of the language features:
 ```
-        module par {
-          using scala::concurrent::_
-          using ExecutionContext::Implicits::global
-          using scala::util::Failure
-          using scala::util::Success
-          using scala::concurrent::duration::_
+    module par {
+      using scala::concurrent::_
+      using ExecutionContext::Implicits::global
+      using scala::util::Failure
+      using scala::util::Success
+      using scala::concurrent::duration::_
 
-          (defun run
-            (val futureList
-              (future
-                (.
-                  (Range 1 100)
-                  (map { x → Math.random } ))))
-            (val result ( futureList.map { x -> x.sum } ))
-            (result.onComplete {
-                x →
-                (match x
-                  ((Success v) → (println v))
-                  ((Failure m) → (println m)))
-              })
-            (Await.result result (. 4 seconds))
-          )
-        }
+      (defun run
+        (val futureList
+          (future
+            (.
+              (Range 1 100)
+              (map { x → Math.random } ))))
+        (val result ( futureList.map { x -> x.sum } ))
+        (result.onComplete {
+            x →
+            (match x
+              ((Success v) → (println v))
+              ((Failure m) → (println m)))
+          })
+        (Await.result result (. 4 seconds))
+      )
+    }
 ```
 
 
