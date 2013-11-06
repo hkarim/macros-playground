@@ -26,7 +26,6 @@ Currently the language supports the following features:
 ### Examples
 
 - The factorial function can be written as:
-
 ```
     (defun factorial:int [n:int]
       (if (le n 1)
