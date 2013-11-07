@@ -10,10 +10,7 @@ object Build extends sbt.Build {
   )
 
   scalacOptions in ThisBuild ++= Seq("-unchecked", "-deprecation", "-feature")
-  val buildSettings = Defaults.defaultSettings ++ Seq(
-    scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature")
-  )
-
+  val buildSettings = Defaults.defaultSettings 
 
 
   lazy val parent = Project(id = "macros-playground",
